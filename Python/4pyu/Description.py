@@ -36,7 +36,3 @@ def solution(array):
         array[index]=array[index]-array[index-1]
         the_same=len(set(array))
     return sum(array)
-
-#--------------
-
-print(solution([1190943, 438567, 15640512, 3240663, 4059072, 2090175, 529308, 5972028, 16386972, 10116447, 489375, 1170672, 19136607, 302847, 5053047, 9880503, 11088063]))
