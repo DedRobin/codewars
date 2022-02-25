@@ -43,10 +43,10 @@ puzzle = [[5,3,0,0,7,0,0,0,0],
 
 
 df=pd.DataFrame(puzzle)
-print(df)
-for grid in range(0,9,3):
-    for grid2 in range(0,9,3):
-        print(df.loc[grid:grid+2,grid2:grid2+2])
+# print(df)
+# for grid in range(0,9,3):
+#     for grid2 in range(0,9,3):
+#         print(df.loc[grid:grid+2,grid2:grid2+2])
 # df=df.loc[0:2]
 # print(df)
 # # df[1][0]=3333
@@ -56,3 +56,5 @@ for grid in range(0,9,3):
 #     print('+')
 # else:
 #     print('-')
+for x in range(10):
+    print(x,'=',sum([i.count(x) for i in puzzle]))
