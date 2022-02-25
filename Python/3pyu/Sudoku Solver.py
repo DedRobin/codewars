@@ -43,12 +43,16 @@ puzzle = [[5,3,0,0,7,0,0,0,0],
 
 
 df=pd.DataFrame(puzzle)
-# print(df)
-df=df.loc[0:2,0:2]
-# df[1][0]=3333
 print(df)
+for grid in range(0,9,3):
+    for grid2 in range(0,9,3):
+        print(df.loc[grid:grid+2,grid2:grid2+2])
+# df=df.loc[0:2]
+# print(df)
+# # df[1][0]=3333
+# print(df)
 
-if 55 in df:
-    print('+')
-else:
-    print('-')
+# if 55 in df:
+#     print('+')
+# else:
+#     print('-')
