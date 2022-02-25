@@ -18,14 +18,17 @@ becomes
 
 def compress(sentence):
     sentence=sentence.lower().split()
-    indexes=[]
-    count=0
-    for index,word in enumerate(sentence):
-        if index!=sentence.index(word):
-            indexes.append(sentence.index(word))
-            count+=1
+    compressing=[]
+    index=0
+    while index!=len(sentence):
+        # a=sentence[index]
+        if sentence.index(sentence[index]) in compressing:
+            compressing.append(sentence.index(sentence[index]))
+            sentence.pop(index)
         else:
-            indexes.append(sentence.index(word)-count)
-    print(indexes)
-    return indexes
-print('012345617891011'==compress('The number 0 is such a strange number Strangely it has zero meaning'))
+            compressing.append(index)
+            index+=1
+    return ''.join(map(lambda x: str(x),compressing))
+
+# print('012345617891011'==compress('The number 0 is such a strange number Strangely it has zero meaning'))
+print(compress('The number 0 is such a strange number Strangely it has zero meaning'))
