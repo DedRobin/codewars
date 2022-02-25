@@ -28,6 +28,8 @@ result = "a#cd#"
 def assemble(arr):
     print(arr)
     temp=[]
+    if arr==[]:
+        return ''
     while len(arr)!=1:
         for index,letter in enumerate(arr.pop(0)):
             if letter=='*' and arr[0][index]=='*':
@@ -44,5 +46,3 @@ def assemble(arr):
             return arr[0]
     else:        
         return arr[0].replace('*','#')
-
-print(assemble(['******', '******', '******', '******']))
