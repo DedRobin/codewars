@@ -23,9 +23,7 @@ If no match the method should return -1
 import re
 
 def find(needle, haystack):
-    symbols=('[',']','\\','^','$','.','|','?','*','+','(',')')
-    for symbol in symbols:
-        if symbol in needle: needle=needle.replace(f'{symbol}',rf'\{symbol}')
-    if '_' in needle: needle=needle.replace('_','.')
+    needle=re.escape(needle)
+    needle=needle.replace('_','.')
     match=re.search(rf'{needle}',haystack)
     return match.span()[0] if match!=None else -1
