@@ -10,7 +10,7 @@ As the article states, RLE is a very simple form of data compression. It's only 
 
 def run_length_encoding(s):
     if not s: return []
-    last_letter=s[0q]
+    last_letter=s[0]
     list_of_letters=[]
     count=0
     for index,letter in enumerate(s):
