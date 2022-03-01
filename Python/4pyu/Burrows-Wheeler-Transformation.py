@@ -67,32 +67,16 @@ def encode(s):
     return (encode_s,encode_index)
 
 def decode(s, n):
-    print(s,n)
-    array=[]
-    for add in range(len(s)):
-        s=list(s)
-        array.append([None]*len(s))
-    # print(array)
-
-    for index,row in enumerate(array):
-        row[-1]=s[index]
-    # print(array)
-
-    s.sort()
-    for index, row in enumerate(array):
-        row[0]=s[index]
-    # print(array)
-
-    while True:
-        for row in array:
-            pattern=row[-1:]+list(filter(lambda x: True if x!=None else False,row))[:-1]
-            for row2 in array:
-                if
-            pass
-
-
-
-
+    s=list(s)
+    s_sort=s.copy()
+    s_sort.sort()
+    matrix=[[letter] for letter in s_sort]
+    for index,row in enumerate(matrix):
+        piece=s[index:index+1]+row[0:1]
+        for row2 in matrix:
+            if piece[:-1]==row2:
+                matrix[matrix.index(row2)]=piece
+                break
 
     return
 
