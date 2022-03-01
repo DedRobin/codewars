@@ -44,7 +44,7 @@ You don't need to reconstruct the whole table to get the input back.
 Goal
 The goal of this Kata is to write both, the encode and decode functions. Together they should work as the identity function on lists. (Note: For the empty input, the row number is ignored.)
 """
-import numpy as np
+
 def encode(s):
     s_copy=list(s)
     matrix=[]
@@ -52,13 +52,47 @@ def encode(s):
         matrix.append(''.join(s_copy))
         s_copy=s_copy.copy()        
         s_copy.insert(0,s_copy.pop())
+
+    # for x in matrix:
+    #     print(list(x))
+    # print('--------------------------------------------')
+
     matrix.sort()
     encode_s=''.join([i[-1] for i in matrix])
     encode_index=matrix.index(s)
-    print(matrix)        
+    
+    # for x in matrix:
+    #     print(list(x))
+
     return (encode_s,encode_index)
 
 def decode(s, n):
+    print(s,n)
+    array=[]
+    for add in range(len(s)):
+        s=list(s)
+        array.append([None]*len(s))
+    # print(array)
+
+    for index,row in enumerate(array):
+        row[-1]=s[index]
+    # print(array)
+
+    s.sort()
+    for index, row in enumerate(array):
+        row[0]=s[index]
+    print(array)
+
+    # while True:
+    #     for row in array:
+    #         pattern
+
+
+
+
+
     return
 
 print(encode('bananabar'))
+val=encode('bananabar')
+print(decode(*val))
