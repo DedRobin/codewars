@@ -81,11 +81,14 @@ def decode(s, n):
     s.sort()
     for index, row in enumerate(array):
         row[0]=s[index]
-    print(array)
+    # print(array)
 
-    # while True:
-    #     for row in array:
-    #         pattern
+    while True:
+        for row in array:
+            pattern=row[-1:]+list(filter(lambda x: True if x!=None else False,row))[:-1]
+            for row2 in array:
+                if
+            pass
 
 
 
