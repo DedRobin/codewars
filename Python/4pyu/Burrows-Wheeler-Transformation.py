@@ -46,40 +46,57 @@ The goal of this Kata is to write both, the encode and decode functions. Togethe
 """
 
 def encode(s):
+    #for empty string
+
+    if s=='': return ('','')
+    
+    #creating the table
+
     s_copy=list(s)
     matrix=[]
     for i in range(len(s_copy)):
         matrix.append(''.join(s_copy))
         s_copy=s_copy.copy()        
         s_copy.insert(0,s_copy.pop())
-
-    # for x in matrix:
-    #     print(list(x))
-    # print('--------------------------------------------')
-
+    
+    #sorting the table
     matrix.sort()
+
+    #return encoded string and number
     encode_s=''.join([i[-1] for i in matrix])
     encode_index=matrix.index(s)
-    
-    # for x in matrix:
-    #     print(list(x))
 
     return (encode_s,encode_index)
 
 def decode(s, n):
+    #for empty string or number
+    if s=='' or n=='': return ''
+    
     s=list(s)
+
+    #s_sort    <---   This will be the last column in 'matrix'.
     s_sort=s.copy()
+
     s_sort.sort()
+
+    #create the first column of last letters(s)
     matrix=[[letter] for letter in s_sort]
-    for index,row in enumerate(matrix):
-        piece=s[index:index+1]+row[0:1]
-        for row2 in matrix:
-            if piece[:-1]==row2:
-                matrix[matrix.index(row2)]=piece
-                break
 
-    return
+    #finding mathes
+    #start with the first(0) column
+    column=1
+    while True:        
+        for index,row in enumerate(matrix):
 
-print(encode('bananabar'))
-val=encode('bananabar')
-print(decode(*val))
+            #I created a variable "chunk" which consists of
+            #this will be the last column of the variable "" + row "row".
+            piece=s[index:index+1]+row[0:column]
+
+            for row2 in matrix:
+                if piece[:-1]==row2:
+                    matrix[matrix.index(row2)]=piece
+                    break
+        column+=1
+        
+        if len(matrix[n])==len(s):
+            return ''.join(matrix[n])
