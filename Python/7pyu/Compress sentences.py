@@ -18,17 +18,12 @@ becomes
 
 def compress(sentence):
     sentence=sentence.lower().split()
-    compressing=[]
-    index=0
-    while index!=len(sentence):
-        # a=sentence[index]
-        if sentence.index(sentence[index]) in compressing:
-            compressing.append(sentence.index(sentence[index]))
-            sentence.pop(index)
-        else:
-            compressing.append(index)
-            index+=1
-    return ''.join(map(lambda x: str(x),compressing))
+    new_sentence=[]
+    for i in sentence:
+        if i not in new_sentence:
+            new_sentence.append(i)
+    hash_table={}
+    for index,i in enumerate(new_sentence):
+        hash_table[i]=str(index)
 
-# print('012345617891011'==compress('The number 0 is such a strange number Strangely it has zero meaning'))
-print(compress('The number 0 is such a strange number Strangely it has zero meaning'))
+    return ''.join(hash_table[i] for i in sentence)
