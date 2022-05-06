@@ -24,7 +24,7 @@ def divided_by(right_operand):
     action=lambda left_operand: left_operand//right_operand
     return action
 
-print(seven(times(five())))
-print(four(plus(nine())))
-print(eight(minus(three())))
-print(six(divided_by(two())))
+# print(seven(times(five())))
+# print(four(plus(nine())))
+# print(eight(minus(three())))
+# print(six(divided_by(two())))
