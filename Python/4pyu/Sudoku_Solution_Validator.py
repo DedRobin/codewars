@@ -9,30 +9,31 @@ Write a function validSolution/ValidateSolution/valid_solution() that accepts a 
 The board is always 9 cells by 9 cells, and every cell only contains integers from 0 to 9.
 """
 
+
 def valid_solution(brand):
 
     from itertools import chain
 
-    pattern={1,2,3,4,5,6,7,8,9}
+    pattern = {1, 2, 3, 4, 5, 6, 7, 8, 9}
 
-    #for rows
+    # for rows
 
     for i in brand:
-        if set(i)!=pattern:           
+        if set(i) != pattern:
             return False
-    
-    #for columns
+
+    # for columns
 
     for i in range(9):
-        column=[x[i] for x in brand]
-        if set(column)!=pattern:            
+        column = [x[i] for x in brand]
+        if set(column) != pattern:
             return False
 
-    #for sub-grids
+    # for sub-grids
 
-    for i in range(0,9,3):
-        temp=list(map(lambda x: x[i:i+3],brand))
-        for y in range(0,9,3):
-            if set(chain(*temp[y:y+3]))!=pattern:
-                return False   
+    for i in range(0, 9, 3):
+        temp = list(map(lambda x: x[i : i + 3], brand))
+        for y in range(0, 9, 3):
+            if set(chain(*temp[y : y + 3])) != pattern:
+                return False
     return True

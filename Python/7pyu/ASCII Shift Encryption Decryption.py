@@ -15,13 +15,16 @@ The decryption should reverse this:
   p | a | s | s | w | o | r | d # Plaintext
 """
 
+
 def ascii_encrypt(plaintext):
-    output=[]
-    for i,x in enumerate(plaintext):
-        output.append(chr(ord(x)+i))
-    return ''.join(output)
+    output = []
+    for i, x in enumerate(plaintext):
+        output.append(chr(ord(x) + i))
+    return "".join(output)
+
+
 def ascii_decrypt(plaintext):
-    output=[]
-    for i,x in enumerate(plaintext):
-        output.append(chr(ord(x)-i))
-    return ''.join(output)
+    output = []
+    for i, x in enumerate(plaintext):
+        output.append(chr(ord(x) - i))
+    return "".join(output)

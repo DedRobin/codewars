@@ -25,24 +25,25 @@ input = [
 result = "a#cd#"
 """
 
+
 def assemble(arr):
     print(arr)
-    temp=[]
-    if arr==[]:
-        return ''
-    while len(arr)!=1:
-        for index,letter in enumerate(arr.pop(0)):
-            if letter=='*' and arr[0][index]=='*':
-                temp.append('*')
-            elif letter!='*' and arr[0][index]=='*': 
+    temp = []
+    if arr == []:
+        return ""
+    while len(arr) != 1:
+        for index, letter in enumerate(arr.pop(0)):
+            if letter == "*" and arr[0][index] == "*":
+                temp.append("*")
+            elif letter != "*" and arr[0][index] == "*":
                 temp.append(letter)
-            elif letter=='*' and arr[0][index]!='*': 
+            elif letter == "*" and arr[0][index] != "*":
                 temp.append(arr[0][index])
             else:
                 temp.append(letter)
-        arr[0]=''.join(temp)
-        temp=[]
-        if '*' not in arr[0]:            
+        arr[0] = "".join(temp)
+        temp = []
+        if "*" not in arr[0]:
             return arr[0]
-    else:        
-        return arr[0].replace('*','#')
+    else:
+        return arr[0].replace("*", "#")

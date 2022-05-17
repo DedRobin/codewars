@@ -5,11 +5,14 @@ For example, if we run 9119 through the function, 811181 will come out, because 
 
 Note: The function accepts an integer and returns an integer
 """
+
+
 def square_digits(num):
     # square_digits=[]
     # for num in str(num):
     #     square_digits.append(str(int(num)**2))
     # return int(''.join(square_digits))
-    return int(''.join(str(int(digit)**2) for digit in str(num)))
+    return int("".join(str(int(digit) ** 2) for digit in str(num)))
+
 
 print(square_digits(9119))

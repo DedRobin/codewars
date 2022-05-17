@@ -10,12 +10,13 @@ Examples
 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
 """
 
+
 def digital_root(n):
-    if 0<=n<=9:
+    if 0 <= n <= 9:
         return n
     else:
-        sum_of_digits=0
+        sum_of_digits = 0
         while n:
-            sum_of_digits+=n%10
-            n//=10
+            sum_of_digits += n % 10
+            n //= 10
         return digital_root(sum_of_digits)

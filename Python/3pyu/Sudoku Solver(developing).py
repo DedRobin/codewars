@@ -28,21 +28,24 @@ sudoku(puzzle)
   [3,4,5,2,8,6,1,7,9]]
 """
 import pandas as pd
+
 # def sudoku(puzzle):
 #     return None
 
-puzzle = [[5,3,0,0,7,0,0,0,0],
-          [6,0,0,1,9,5,0,0,0],
-          [0,9,8,0,0,0,0,6,0],
-          [8,0,0,0,6,0,0,0,3],
-          [4,0,0,8,0,3,0,0,1],
-          [7,0,0,0,2,0,0,0,6],
-          [0,6,0,0,0,0,2,8,0],
-          [0,0,0,4,1,9,0,0,5],
-          [0,0,0,0,8,0,0,7,9]]
+puzzle = [
+    [5, 3, 0, 0, 7, 0, 0, 0, 0],
+    [6, 0, 0, 1, 9, 5, 0, 0, 0],
+    [0, 9, 8, 0, 0, 0, 0, 6, 0],
+    [8, 0, 0, 0, 6, 0, 0, 0, 3],
+    [4, 0, 0, 8, 0, 3, 0, 0, 1],
+    [7, 0, 0, 0, 2, 0, 0, 0, 6],
+    [0, 6, 0, 0, 0, 0, 2, 8, 0],
+    [0, 0, 0, 4, 1, 9, 0, 0, 5],
+    [0, 0, 0, 0, 8, 0, 0, 7, 9],
+]
 
 
-df=pd.DataFrame(puzzle)
+df = pd.DataFrame(puzzle)
 # print(df)
 # for grid in range(0,9,3):
 #     for grid2 in range(0,9,3):
@@ -57,4 +60,4 @@ df=pd.DataFrame(puzzle)
 # else:
 #     print('-')
 for x in range(10):
-    print(x,'=',sum([i.count(x) for i in puzzle]))
+    print(x, "=", sum([i.count(x) for i in puzzle]))

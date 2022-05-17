@@ -9,7 +9,8 @@ If a value is present in b, all of its occurrences must be removed from the othe
 array_diff([1,2,2,2,3],[2]) == [1,3]
 """
 
+
 def array_diff(a, b):
     for i in b:
-        a=list(filter(lambda x: x!=i,a))
+        a = list(filter(lambda x: x != i, a))
     return a

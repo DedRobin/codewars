@@ -22,9 +22,14 @@ m = 1
 result - division by zero (refer to the specifications on how to handle this in your language)
 """
 
-def remainder(a,b):
-    print(a,b)
-    if (a>0 and b==0) or (a==0 and b>0) or (a==b==0): return None
-    elif (a<0 and b==0) or (a==0 and b<0): return 0   
-    elif a<b: return b%a
-    else: return a%b
+
+def remainder(a, b):
+    print(a, b)
+    if (a > 0 and b == 0) or (a == 0 and b > 0) or (a == b == 0):
+        return None
+    elif (a < 0 and b == 0) or (a == 0 and b < 0):
+        return 0
+    elif a < b:
+        return b % a
+    else:
+        return a % b
