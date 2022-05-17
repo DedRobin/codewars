@@ -13,53 +13,54 @@ solution([-10, -9, -8, -6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 1
 
 #!!! not optimized
 
+
 def solution(args):
 
-    #start - used to register the starting position of a range of numbers
-    #end - used to register the ending position of a range of numbers
-    #count - used to calculate the difference 'start - i = 1'
+    # start - used to register the starting position of a range of numbers
+    # end - used to register the ending position of a range of numbers
+    # count - used to calculate the difference 'start - i = 1'
 
-    start=end=args[0]
-    new_array=[]
-    count=0
+    start = end = args[0]
+    new_array = []
+    count = 0
 
-    for index,i in enumerate(args[1:],1):
+    for index, i in enumerate(args[1:], 1):
 
-        #for the last number in list
-        #The ending position in range is 'i'. 'end' is the number before the last.
-        
-        if index==len(args)-1:
-            if i-args[index-1]==1:
-                count+=1
-            if i-args[index-1]!=1:
-                if count<1:
-                    new_array.extend([str(start),str(i)])
-                elif count==1:
-                    new_array.extend([str(start),str(end)])
+        # for the last number in list
+        # The ending position in range is 'i'. 'end' is the number before the last.
+
+        if index == len(args) - 1:
+            if i - args[index - 1] == 1:
+                count += 1
+            if i - args[index - 1] != 1:
+                if count < 1:
+                    new_array.extend([str(start), str(i)])
+                elif count == 1:
+                    new_array.extend([str(start), str(end)])
                     new_array.extend([str(i)])
-                elif count>1:
-                    new_array.append('-'.join([str(start),str(end)]))
+                elif count > 1:
+                    new_array.append("-".join([str(start), str(end)]))
                     new_array.extend([str(i)])
-            elif i-args[index-1]==1:
-                if count<1:
-                    new_array.extend([str(start),str(i)])
-                elif count==1:
-                    new_array.extend([str(start),str(i)])
-                elif count>1:
-                    new_array.append('-'.join([str(start),str(i)]))
+            elif i - args[index - 1] == 1:
+                if count < 1:
+                    new_array.extend([str(start), str(i)])
+                elif count == 1:
+                    new_array.extend([str(start), str(i)])
+                elif count > 1:
+                    new_array.append("-".join([str(start), str(i)]))
             else:
-                new_array.append('-'.join([str(start),str(i)]))               
-               
-        elif i-args[index-1]==1:
-            count+=1
-            end=i
+                new_array.append("-".join([str(start), str(i)]))
+
+        elif i - args[index - 1] == 1:
+            count += 1
+            end = i
         else:
-            if end-start==1 and count==1:
-                new_array.extend([str(start),str(end)])
-            elif count>1:
-                new_array.append('-'.join([str(start),str(end)]))
+            if end - start == 1 and count == 1:
+                new_array.extend([str(start), str(end)])
+            elif count > 1:
+                new_array.append("-".join([str(start), str(end)]))
             else:
                 new_array.append(str(start))
-            count=0
-            start=i
-    return ','.join(new_array)
+            count = 0
+            start = i
+    return ",".join(new_array)

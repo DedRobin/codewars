@@ -38,28 +38,29 @@ s2 = "my frie n d Joh n has ma n y ma n y frie n ds n&"
 mix(s1, s2) --> "1:mmmmmm/E:nnnnnn/1:aaaa/1:hhh/2:yyy/2:dd/2:ff/2:ii/2:rr/E:ee/E:ss"
 """
 
+
 def mix(s1, s2):
-    resume_s={}
-    output=[]
-    for number,s in enumerate((s1,s2),1):
-        letters=set((filter(lambda x: x.islower(), s)))
-        hash_table={}
+    resume_s = {}
+    output = []
+    for number, s in enumerate((s1, s2), 1):
+        letters = set((filter(lambda x: x.islower(), s)))
+        hash_table = {}
         for letter in letters:
-            if s.count(letter)<=1:
-                continue            
-            hash_table[letter]=s.count(letter)
-        resume_s[number]=hash_table
-    mix=resume_s[1]|resume_s[2]
-    mix=[(y,x) for x,y in mix.items()]
+            if s.count(letter) <= 1:
+                continue
+            hash_table[letter] = s.count(letter)
+        resume_s[number] = hash_table
+    mix = resume_s[1] | resume_s[2]
+    mix = [(y, x) for x, y in mix.items()]
     mix.sort()
     mix.reverse()
-    for n,l in mix:
-        output.append(f'{n}:{l*n}')
-    
+    for n, l in mix:
+        output.append(f"{n}:{l*n}")
+
     # for key,table in resume_s.items():
     #     for value in table:
 
+    return "/".join(output)
 
-    return '/'.join(output)
 
 print(mix("Are they here", "yes, they are here"))

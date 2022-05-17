@@ -3,5 +3,7 @@ hese strange children pass by some doors they change their status (i.e. Open -> 
 
 You need to count how many doors are left opened after all the students have come.
 """
-def doors(n):   
+
+
+def doors(n):
     return int(n**0.5)

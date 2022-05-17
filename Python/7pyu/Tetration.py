@@ -8,5 +8,6 @@ Note: the convention is that, as with exponentiation, the 0th tetration of any n
 """
 from functools import reduce
 
+
 def tetration(x, y):
-    return reduce(lambda x,y: y**x,(x for i in range(y)))
+    return reduce(lambda x, y: y**x, (x for i in range(y)))

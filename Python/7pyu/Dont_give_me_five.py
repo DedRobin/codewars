@@ -15,6 +15,7 @@ Have fun coding it and please don't forget to vote and rank this kata! :-)
 I have also created other katas. Take a look if you enjoyed this kata!
 """
 
-def dont_give_me_five(start,end):
-    print(list(range(start,end+1)))
-    return len([number for number in range(start,end+1) if '5' not in str(number)])
+
+def dont_give_me_five(start, end):
+    print(list(range(start, end + 1)))
+    return len([number for number in range(start, end + 1) if "5" not in str(number)])

@@ -8,8 +8,10 @@ Example: (Input --> Output)
 "moOse" --> false (ignore letter case)
 """
 
+
 def is_isogram(string):
-    string=string.lower()
+    string = string.lower()
     for i in string:
-        if string.count(i)>1: return False
+        if string.count(i) > 1:
+            return False
     return True

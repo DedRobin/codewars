@@ -16,14 +16,15 @@ becomes
 "01231203"
 """
 
+
 def compress(sentence):
-    sentence=sentence.lower().split()
-    new_sentence=[]
+    sentence = sentence.lower().split()
+    new_sentence = []
     for i in sentence:
         if i not in new_sentence:
             new_sentence.append(i)
-    hash_table={}
-    for index,i in enumerate(new_sentence):
-        hash_table[i]=str(index)
+    hash_table = {}
+    for index, i in enumerate(new_sentence):
+        hash_table[i] = str(index)
 
-    return ''.join(hash_table[i] for i in sentence)
+    return "".join(hash_table[i] for i in sentence)

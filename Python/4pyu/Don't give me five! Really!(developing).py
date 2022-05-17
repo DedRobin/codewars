@@ -16,30 +16,33 @@ The regions can be very large and there will be a large number of test cases. So
 Good luck, warrior!
 """
 import os
-os.system('cls||clear')
+
+os.system("cls||clear")
+
 
 def dont_give_me_five(start, end):
-    if start<0:
-        if end<0:
-            count=abs(start)-abs(end)+1
+    if start < 0:
+        if end < 0:
+            count = abs(start) - abs(end) + 1
         else:
-            count=abs(start)+abs(end)+1
-    elif start==0:
-        count=end
-    elif end==0:
-        count=abs(start)
+            count = abs(start) + abs(end) + 1
+    elif start == 0:
+        count = end
+    elif end == 0:
+        count = abs(start)
     else:
-        count=end-start+1
-    print(f'[{start} - {end}]','\nCount =',count)
-    number_of_diviver_on_five=count//10
-    a=start%10
-    if 0<=start<=4 or (start<0 and 6<=abs(start)%10<=9):
-        number_of_diviver_on_five+=1
-    return count-number_of_diviver_on_five
+        count = end - start + 1
+    print(f"[{start} - {end}]", "\nCount =", count)
+    number_of_diviver_on_five = count // 10
+    a = start % 10
+    if 0 <= start <= 4 or (start < 0 and 6 <= abs(start) % 10 <= 9):
+        number_of_diviver_on_five += 1
+    return count - number_of_diviver_on_five
 
-print(dont_give_me_five(-17, 9))#24
-print(dont_give_me_five(1, 9))#8
-print(dont_give_me_five(4, 17))#12
-print(dont_give_me_five(-17, -4))#12
 
-print(dont_give_me_five(0, 500))#326131553237897713
+print(dont_give_me_five(-17, 9))  # 24
+print(dont_give_me_five(1, 9))  # 8
+print(dont_give_me_five(4, 17))  # 12
+print(dont_give_me_five(-17, -4))  # 12
+
+print(dont_give_me_five(0, 500))  # 326131553237897713
