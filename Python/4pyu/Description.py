@@ -27,12 +27,13 @@ Additional notes:
 There are performance tests consisted of very big numbers and arrays of size at least 30000. Please write an efficient algorithm to prevent timeout.
 """
 
+
 def solution(array):
-    the_same=len(set(array))
-    while the_same!=1:
+    the_same = len(set(array))
+    while the_same != 1:
         array.sort()
-        max_from_the_array=max(array)
-        index=array.index(max_from_the_array)        
-        array[index]=array[index]-array[index-1]
-        the_same=len(set(array))
+        max_from_the_array = max(array)
+        index = array.index(max_from_the_array)
+        array[index] = array[index] - array[index - 1]
+        the_same = len(set(array))
     return sum(array)
