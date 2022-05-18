@@ -1,1 +1,1 @@
-# My solutions for codewars.com
+# Hello! There is my solutions of exercises.
