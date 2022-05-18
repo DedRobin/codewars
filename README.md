@@ -1,1 +1,1 @@
-# Hello! There is my solutions of exercises.
+# Hello! There is my solutions.
