@@ -15,7 +15,6 @@ The decryption should reverse this:
   p | a | s | s | w | o | r | d # Plaintext
 """
 
-
 def ascii_encrypt(plaintext):
     output = []
     for i, x in enumerate(plaintext):
