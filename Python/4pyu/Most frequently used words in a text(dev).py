@@ -37,7 +37,11 @@ print(top_3_words("  '  "))
 # print(top_3_words("  , e   .. "))
 
 if __name__ == "__main__":
-    string = "FYw .-:nFnXDzCcFx;ksB;FYw_FYw/,!/FYw!ksB;,nFnXDzCcFx:_ksB!FYw;!,?kyIo:;:_ksB;,-kyIo? _ ?nFnXDzCcFx_ksB/kyIo -?/;nFnXDzCcFx.:.-FYw_nFnXDzCcFx /nFnXDzCcFx?/ __ksB_- nFnXDzCcFx/?.FYw:,.!:FYw_-_:-nFnXDzCcFx/kyIo/kyIo.ksB_:nFnXDzCcFx/-:nFnXDzCcFx-FYw!.:ksB-nFnXDzCcFx!/.;/kyIo/ ,,FYw  -.;ksB;-ksB/,ksB?! ,kyIo!!; ,ksB_!?nFnXDzCcFx:; ,:ksB:;- ksB.ksB_:ksB ?.,kyIo: ,nFnXDzCcFx!;/!FYw-?!kyIo-- :kyIo_,;ksB_kyIo!??. ksB:FYw _/ksB/:,kyIo.?_;,nFnXDzCcFx,,/ksB_;.:FYw-_ ::kyIo,ksB;,:-nFnXDzCcFx!:-kyIo-?!nFnXDzCcFx?-_ksB.FYw/nFnXDzCcFx!  ?;ksB,FYw,FYw/ /._ksB?nFnXDzCcFx:ksB_ !;/FYw:/ nFnXDzCcFx ,nFnXDzCcFx: ::kyIo/,,nFnXDzCcFx: ksB FYw-;FYw,ksB -/_,kyIo -:FYw!_;?ksB/_?;.nFnXDzCcFx_"
+    string = "FYw .'-won't:nFnXDzCcFx;ksB;FYw_FYw/,!/FYw!ksB;,nFnXDzCcFx:_ksB!FYw;!,?kyIo:;:_ksB;,-kyIo? _ ?nFnXDzCcFx_ksB/kyIo -?/;nFnXDzCcFx.:.-FYw_nFnXDzCcFx /nFnXDzCcFx?/ __ksB_- nFnXDzCcFx/?.FYw:,.!:FYw_-_:-nFnXDzCcFx/kyIo/kyIo.ksB_:nFnXDzCcFx/-:nFnXDzCcFx-FYw!.:ksB-nFnXDzCcFx!/.;/kyIo/ ,,FYw  -.;ksB;-ksB/,ksB?! ,kyIo!!; ,ksB_!?nFnXDzCcFx:; ,:ksB:;- ksB.ksB_:ksB ?.,kyIo: ,nFnXDzCcFx!;/!FYw-?!kyIo-- :kyIo_,;ksB_kyIo!??. ksB:FYw _/ksB/:,kyIo.?_;,nFnXDzCcFx,,/ksB_;.:FYw-_ ::kyIo,ksB;,:-nFnXDzCcFx!:-kyIo-?!nFnXDzCcFx?-_ksB.FYw/nFnXDzCcFx!  ?;ksB,FYw,FYw/ /._ksB?nFnXDzCcFx:ksB_ !;/FYw:/ nFnXDzCcFx ,nFnXDzCcFx: ::kyIo/,,nFnXDzCcFx: ksB FYw-;FYw,ksB -/_,kyIo -:FYw!_;?ksB/_?;.nFnXDzCcFx_"
+    # string = "  '  "
     print(string)
     a = [x if x in " 'abcdefghijklmnopqrstuvwxyz" else " " for x in string.lower()]
     print("".join(a))
+    print("".join(a).split())
+    a = [x for x in a if x != "'"]
+    print("".join(a).split())
