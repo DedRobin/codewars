@@ -24,7 +24,7 @@ def top_3_words(text):
         return False
 
     # Filter out our string and except characters which contain only apostrophe.
-    filter_text = [x for x in filter_text if contain_alpha(x)]  # for single apostrophes
+    filter_text = [x for x in filter_text if contain_alpha(x)]
 
     # Finally, we use Counter collection to find 3 top words in input text.
     most_common = Counter(filter_text).most_common(3)
